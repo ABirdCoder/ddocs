@@ -1,7 +1,14 @@
 var heads = {};
-
 window.onload = () => {
+  var code_pretty = document.createElement('script');
+
+  code_pretty.setAttribute('src','https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js');
+
+  document.head.appendChild(code_pretty);
+
+
   const dheads = document.querySelectorAll("dhead");
+  const dcode = document.querySelectorAll("dcode");
   const ul = document.createElement("ul");
   ul.classList.add("docslink");
 
@@ -26,7 +33,14 @@ window.onload = () => {
 
   
   document.body.appendChild(ul);
+  
 
+  dcode.forEach(item => {
+    newcode = "<pre class='prettyprint'>" + item.innerHTML + "</pre>"
+
+    item.outerHTML = newcode;
+  })
+  
 }
 
 window.onscroll = () => {

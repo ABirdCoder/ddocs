@@ -32,7 +32,7 @@ html {
     color: var(--base-color)
   }
 
-  docs *::after {
+  docs *::after:not(pre) {
     content: "\A";
     white-space: pre;
   }
@@ -64,15 +64,19 @@ html {
     padding: 2px;
   }
 
-  dcode {
+  .prettyprint {
     text-align: left;
     font-family: Consolas,"courier new";
 
     background-color: var(--code-bg);
-    display: block;
-    border-radius: 5px;
-    padding:10px;
-    font-size: 2.5vw;
+    display: block !important;
+    border-radius: 5px !important;
+    padding:10px !important;
+    border:none !important;
+  }
+
+  .prettyprint * {
+    font-size: 2.5vw !important;
   }
 }
 
@@ -93,7 +97,7 @@ html {
     font-size: 2.5vw;
   }
 
-  docs *::after {
+  docs *::after:not(pre) {
     content: "\A";
     white-space: pre;
   }
@@ -110,7 +114,7 @@ html {
   dinfo {
     font-style: italic;
     margin: 20px;
-    font-size: 1vw;
+    font-size: 1.5vw;
 
     padding: 5px;
 
@@ -125,15 +129,19 @@ html {
     padding: 2px;
   }
 
-  dcode {
+  .prettyprint {
     text-align: left;
     font-family: Consolas,"courier new";
 
     background-color: var(--code-bg);
-    display: block;
-    border-radius: 5px;
-    padding:10px;
-    font-size: 1.5vw;
+    display: block !important;
+    border-radius: 5px !important;
+    padding:10px !important;
+    border:none !important;
+  }
+
+  .prettyprint * {
+    font-size: 1.5vw !important;
   }
 }
 
@@ -149,7 +157,7 @@ html {
 }
 
 .docslink a {
-  margin-right: 5px;
+  margin-right: 5%;
   color: var(--bookmark-unselected);
   text-decoration: none;
 }
