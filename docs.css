@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+html {
+  scroll-behavior: smooth; 
+}
+
+:root {
+  --code-bg: #f1f1f1;
+  --sample-color: crimson;
+  --info-color: grey;
+  --base-color: black;
+
+  --bookmark-unselected: grey;
+  --bookmark-background: #b1b1b1;
+  --bookmark-selected: #36a4cf;
+}
+
+@media only screen and (max-width: 800px) {
+  docs {
+    position: absolute;
+    
+    height: 100%;
+    width: 50%;
+    top: 0;
+    text-align: center;
+
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  docs *{
+    font-size: 4.5vw;
+    color: var(--base-color)
+  }
+
+  docs *::after {
+    content: "\A";
+    white-space: pre;
+  }
+
+
+
+
+
+  dhead {
+    font-size: 7vw;
+    font-weight: bolder;
+  }
+
+  dinfo {
+    font-style: italic;
+    margin: 20px;
+    font-size: 2.5vw;
+
+    padding: 5px;
+
+
+    color: var(--info-color);
+  }
+
+  dtag {
+    font-family: Consolas,"courier new";
+    color: var(--sample-color);
+    background-color: var(--code-bg);
+    padding: 2px;
+  }
+
+  dcode {
+    text-align: left;
+    font-family: Consolas,"courier new";
+
+    background-color: var(--code-bg);
+    display: block;
+    border-radius: 5px;
+    padding:10px;
+    font-size: 2.5vw;
+  }
+}
+
+
+@media only screen and (min-width: 801px) {
+  docs {
+    position: absolute;
+    
+    height: 100%;
+    width: 50%;
+    top: 0;
+    text-align: center;
+
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  docs *{
+    font-size: 2.5vw;
+  }
+
+  docs *::after {
+    content: "\A";
+    white-space: pre;
+  }
+
+
+
+
+
+  dhead {
+    font-size: 4vw;
+    font-weight: bolder;
+  }
+
+  dinfo {
+    font-style: italic;
+    margin: 20px;
+    font-size: 1vw;
+
+    padding: 5px;
+
+
+    color: var(--info-color);
+  }
+
+  dtag {
+    font-family: Consolas,"courier new";
+    color: var(--sample-color);
+    background-color: var(--code-bg);
+    padding: 2px;
+  }
+
+  dcode {
+    text-align: left;
+    font-family: Consolas,"courier new";
+
+    background-color: var(--code-bg);
+    display: block;
+    border-radius: 5px;
+    padding:10px;
+    font-size: 1.5vw;
+  }
+}
+
+.docslink {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 30%;
+  list-style-type: none;
+  text-align: right;
+
+}
+
+.docslink a {
+  margin-right: 5px;
+  color: var(--bookmark-unselected);
+  text-decoration: none;
+}
+
+.docslink a.dselected {
+  color: var(--bookmark-selected);
+}
