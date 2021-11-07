@@ -1,10 +1,5 @@
 var heads = {};
 window.onload = () => {
-  var code_pretty = document.createElement('script');
-
-  code_pretty.setAttribute('src','https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js');
-
-  document.head.appendChild(code_pretty);
 
 
   const dheads = document.querySelectorAll("dhead");
@@ -36,11 +31,12 @@ window.onload = () => {
   
 
   dcode.forEach(item => {
-    newcode = "<pre class='prettyprint'>" + item.innerHTML + "</pre>"
+    newcode = "<pre> <code>" + item.innerHTML + "</code> </pre>"
 
     item.outerHTML = newcode;
   })
   
+    hljs.highlightAll();
 }
 
 window.onscroll = () => {
