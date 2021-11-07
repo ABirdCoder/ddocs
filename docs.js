@@ -9,8 +9,8 @@ window.onload = () => {
 
   dheads.forEach(item => {
     item.id = 'ddocs' + item.innerHTML;
-    
-    
+
+
     const li = document.createElement("li");
     const h3 = document.createElement("h3");
     const a = document.createElement("a");
@@ -26,21 +26,32 @@ window.onload = () => {
     heads[a.innerHTML] = a;
   });
 
-  
+
   document.body.appendChild(ul);
-  
+
 
   dcode.forEach(item => {
-    newcode = "<pre> <code>" + item.innerHTML + "</code> </pre>"
+    newcode = "<pre> <button class='dcopycode'>Copy &#x2398;</button> <code>" + item.innerHTML + "</code> </pre>"
 
     item.outerHTML = newcode;
   })
-  
-    hljs.highlightAll();
+
+  document.querySelectorAll(".dcopycode").forEach(item => {
+    item.addEventListener("click", function () {
+      var copy = item.parentElement.querySelectorAll("code")[0].innerText;
+      navigator.clipboard.writeText(copy).then(function () {
+        console.log('Async: Copying to clipboard was successful!');
+      }, function (err) {
+        console.error('Async: Could not copy text: ', err);
+      });
+    })
+  })
+
+  hljs.highlightAll();
 }
 
 window.onscroll = () => {
-  const dheads = document.querySelectorAll("dhead"); 
+  const dheads = document.querySelectorAll("dhead");
 
   var found = false;
   var whatfound = undefined;

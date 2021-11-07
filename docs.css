@@ -16,6 +16,10 @@ html {
 
   --scrollbar-code-color: #888;
   --scrollbar-code-color-hover: #555;
+
+
+  --copy-button-color: white;
+  --copy-button-bg: #3aa0ff;
 }
 
 @media only screen and (max-width: 800px) {
@@ -28,12 +32,24 @@ html {
     text-align: center;
 
     font-family: 'Open Sans', sans-serif;
+    font-size: 3.5vw;    
+  }
+
+  docs * {
+    color: var(--base-color);
   }
 
   docs *{
-    font-size: 4.5vw;
-    color: var(--base-color)
+    font-size: 3.5vw;    
   }
+
+  docs a {
+    color: var(--base-color);
+    font-size: auto !important;    
+    text-decoration: underline;
+  }
+
+
 
   docs *::after:not(pre) {
     content: "\A";
@@ -45,19 +61,22 @@ html {
 
 
   dhead {
-    font-size: 7vw;
+    font-size: 7vw !important;
     font-weight: bolder;
   }
 
   dinfo {
     font-style: italic;
     margin: 20px;
-    font-size: 2.5vw;
-
     padding: 5px;
-
-
     color: var(--info-color);
+    font-size: 2.5vw !important;
+  }
+
+  dinfo * {
+    color: var(--info-color) !important;
+
+    font-size: 2.5vw !important;
   }
 
   dtag {
@@ -66,6 +85,7 @@ html {
     background-color: var(--code-bg);
     padding: 2px;
   }
+
 
   pre code {
     text-align: left;
@@ -77,6 +97,7 @@ html {
     padding:10px !important;
     border:none !important;
     font-size: 3vw !important;
+    z-index: 0;
   }
 
   pre code::-webkit-scrollbar {
@@ -95,6 +116,25 @@ html {
     background-color: var(--scrollbar-code-color-hover);
   }
 
+  .dcopycode {
+    width: 100%;
+    left: 0;
+    margin: -10%;
+
+    background-color: var(--copy-button-bg);
+    color: var(--copy-button-color);
+
+    border: none;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+
+    text-align: center;
+    z-index: 1;
+  }
+
+  .dcopycode:hover {
+    filter: brightness(95%);
+  }
 
   pre code * {
     font-size: 3vw !important;
@@ -112,10 +152,18 @@ html {
     text-align: center;
 
     font-family: 'Open Sans', sans-serif;
+    font-size: 2vw;
+
   }
 
   docs *{
-    font-size: 2.5vw;
+    font-size: 2vw;
+  }
+
+  docs a {
+    color: var(--base-color);
+    font-size: 2vw !important;    
+    text-decoration: underline;
   }
 
   docs *::after:not(pre) {
@@ -178,6 +226,25 @@ html {
     background-color: var(--scrollbar-code-color-hover);
   }
 
+  .dcopycode {
+    width: 100%;
+    left: 0;
+    margin: -10%;
+
+    background-color: var(--copy-button-bg);
+    color: var(--copy-button-color);
+
+    border: none;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+
+    text-align: center;
+    z-index: 1;
+  }
+
+  .dcopycode:hover {
+    filter: brightness(95%);
+  }
 
   pre code * {
     font-size: 1.5vw !important;
@@ -192,7 +259,6 @@ html {
   width: 30%;
   list-style-type: none;
   text-align: right;
-
 }
 
 .docslink a {
