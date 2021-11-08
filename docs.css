@@ -35,6 +35,11 @@ html {
     font-size: 3.5vw;    
   }
 
+  docs img {
+    width: 100%;
+    height: auto;
+  }
+
   docs .line {
     display: inline-block;
     width: 100%;
@@ -162,6 +167,11 @@ html {
     font-family: 'Open Sans', sans-serif;
     font-size: 2vw;
 
+  }
+
+  docs img {
+    width: 100%;
+    height: auto;
   }
 
   docs .line {

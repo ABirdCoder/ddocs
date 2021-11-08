@@ -12,6 +12,7 @@ It includes:
 + Code tag (like `this`)
 + Links
 + List support
++ Image support
 
 
 You can find the docs [here](https://ddocs.abirdcoder.repl.co).
