@@ -54,16 +54,6 @@ html {
   }
 
 
-
-  docs *::after:not(pre) {
-    content: "\A";
-    white-space: pre;
-  }
-
-
-
-
-
   dhead {
     font-size: 7vw !important;
     font-weight: bolder;
@@ -173,15 +163,6 @@ html {
   docs li, docs ol {
     text-align: left;
   }
-
-  docs *::after:not(pre) {
-    content: "\A";
-    white-space: pre;
-  }
-
-
-
-
 
   dhead {
     font-size: 4vw;
