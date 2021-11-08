@@ -41,7 +41,7 @@ html {
     border-top: 0.2px solid black;
   }
 
-  docs * {
+  docs *:not(li, ol) {
     display: inline;
     color: var(--base-color);
   }
@@ -50,7 +50,7 @@ html {
     font-size: 3.5vw;    
   }
 
-  docs *:not(pre *)::after {
+  docs *:not(pre *, ol, li, dtag, a)::after {
     content:"\a";
     white-space: pre;
   }
@@ -170,17 +170,16 @@ html {
     border-top: 0.2px solid black;
   }
 
-  docs *{
-    font-size: 2vw;
-  }
-
-  docs a {
+  docs *:not(li, ol) {
+    display: inline;
     color: var(--base-color);
-    font-size: 2vw !important;    
-    text-decoration: underline;
   }
 
-  docs *:not(pre *)::after {
+  docs *{
+    font-size: 2vw;    
+  }
+
+  docs *:not(pre *, ol, li, dtag, a)::after {
     content:"\a";
     white-space: pre;
   }
