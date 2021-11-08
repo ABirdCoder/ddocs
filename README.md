@@ -9,8 +9,9 @@ It includes:
 + Info
 + Code samples
 + Copy button for code
-+ Code variables (like `this`)
++ Code tag (like `this`)
 + Links
++ List support
 
 
 You can find the docs [here](https://ddocs.abirdcoder.repl.co).
