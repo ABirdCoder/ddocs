@@ -1,4 +1,8 @@
 var heads = {};
+
+window.onerror = (errormsg, loc, line) => {
+  alert(errormsg + " at line: " + line);
+}
 window.onload = () => {
 
 
@@ -64,9 +68,9 @@ window.onscroll = () => {
   var whatfound = undefined;
   dheads.forEach(item => {
     const rect = item.getBoundingClientRect();
-
+    
     if (window.scrollY >= rect.top && window.scrollY <= rect.bottom && !found) {
-      heads[item.innerHTML].classList.add("dselected");
+      heads[item.innerText].classList.add("dselected");
       found = true;
       whatfound = item;
     }
@@ -74,7 +78,7 @@ window.onscroll = () => {
 
   dheads.forEach(item => {
     if (found && item != whatfound) {
-      heads[item.innerHTML].classList.remove("dselected");
+      heads[item.innerText].classList.remove("dselected");
     }
   })
 }
