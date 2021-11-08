@@ -8,8 +8,8 @@ window.onload = () => {
   ul.classList.add("docslink");
 
   dheads.forEach(item => {
-    item.id = 'ddocs' + item.innerHTML;
-
+    item.id = 'ddocs' + item.innerText;
+    item.innerHTML += "<span class='line'></span>"
 
     const li = document.createElement("li");
     const h3 = document.createElement("h3");
@@ -18,10 +18,14 @@ window.onload = () => {
     li.appendChild(h3);
     h3.appendChild(a);
 
-    a.href = "#ddocs" + item.innerHTML;
-    a.innerHTML = item.innerHTML;
+    a.href = "#ddocs" + item.innerText;
+    a.innerHTML = item.innerText;
 
     ul.appendChild(li);
+
+    if (Object.keys(heads).length == 0) {
+      a.classList.add("dselected")
+    }
 
     heads[a.innerHTML] = a;
   });
@@ -40,10 +44,13 @@ window.onload = () => {
     item.addEventListener("click", function () {
       var copy = item.parentElement.querySelectorAll("code")[0].innerText;
       navigator.clipboard.writeText(copy).then(function () {
-        console.log('Async: Copying to clipboard was successful!');
+        item.innerText = "Copied!"
       }, function (err) {
-        console.error('Async: Could not copy text: ', err);
+        item.innerText = "Failed to copy!"
       });
+      setTimeout(function() {
+        item.innerHTML = "Copy &#x2398;"
+      }, 1000);
     })
   })
 

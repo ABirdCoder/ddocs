@@ -35,12 +35,24 @@ html {
     font-size: 3.5vw;    
   }
 
-  docs * {
+  docs .line {
+    display: inline-block;
+    width: 100%;
+    border-top: 0.2px solid black;
+  }
+
+  docs:not(hr) * {
+    display: inline;
     color: var(--base-color);
   }
 
   docs *{
     font-size: 3.5vw;    
+  }
+
+  docs *:not(pre *, hr)::after {
+    content:"\a";
+    white-space: pre;
   }
 
   docs a {
@@ -55,9 +67,11 @@ html {
 
 
   dhead {
+    text-align: center;
     font-size: 7vw !important;
     font-weight: bolder;
   }
+
 
   dinfo {
     font-style: italic;
@@ -160,6 +174,11 @@ html {
     text-decoration: underline;
   }
 
+  docs *:not(pre *)::after {
+    content:"\a";
+    white-space: pre;
+  }
+
   docs li, docs ol {
     text-align: left;
   }
@@ -260,3 +279,4 @@ html {
   color: var(--bookmark-selected);
 }
 
+  
