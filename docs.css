@@ -41,7 +41,7 @@ html {
     border-top: 0.2px solid black;
   }
 
-  docs:not(hr) * {
+  docs * {
     display: inline;
     color: var(--base-color);
   }
@@ -50,7 +50,7 @@ html {
     font-size: 3.5vw;    
   }
 
-  docs *:not(pre *, hr)::after {
+  docs *:not(pre *)::after {
     content:"\a";
     white-space: pre;
   }
@@ -162,6 +162,12 @@ html {
     font-family: 'Open Sans', sans-serif;
     font-size: 2vw;
 
+  }
+
+  docs .line {
+    display: inline-block;
+    width: 100%;
+    border-top: 0.2px solid black;
   }
 
   docs *{
