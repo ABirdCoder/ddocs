@@ -282,6 +282,8 @@ html {
   width: 30%;
   list-style-type: none;
   text-align: right;
+  
+  overflow-y: scroll;
 }
 
 .docslink a {
