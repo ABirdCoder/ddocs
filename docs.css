@@ -1,17 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
-html {
+* {
   scroll-behavior: smooth; 
+  overflow-x: hidden;
+}
+
+html {
+  background-color: var(--docs-bg);
 }
 
 :root {
+  --docs-bg: white;
   --code-bg: #f1f1f1;
   --sample-color: crimson;
   --info-color: grey;
   --base-color: black;
 
-  --bookmark-unselected: grey;
-  --bookmark-background: #b1b1b1;
+  --bookmark-unselected: rgb(70, 68, 68);
+  --bookmark-background: #ebebeb;
   --bookmark-selected: #36a4cf;
 
   --scrollbar-code-color: #888;
@@ -23,16 +29,20 @@ html {
 }
 
 @media only screen and (max-width: 800px) {
-  docs {
+  docs  {
     position: absolute;
     
     height: 100%;
     width: 50%;
     top: 0;
+    right: 0;
     text-align: center;
 
+    margin-right: 5%;
+
     font-family: 'Open Sans', sans-serif;
-    font-size: 3.5vw;    
+    font-size: 3.5vw; 
+    color: var(--base-color)
   }
 
   docs img {
@@ -43,7 +53,7 @@ html {
   docs .line {
     display: inline-block;
     width: 100%;
-    border-top: 0.2px solid black;
+    border-top: 0.2px solid var(--base-color);
   }
 
   docs *:not(li, ol) {
@@ -59,6 +69,13 @@ html {
     content:"\a";
     white-space: pre;
   }
+
+  docs pre::before {
+    content:"\a";
+    white-space: pre;
+  }
+
+
 
   docs a {
     color: var(--base-color);
@@ -80,9 +97,10 @@ html {
 
   dinfo {
     font-style: italic;
-    margin: 20px;
-    padding: 5px;
-    color: var(--info-color);
+    margin: 0;
+    text-align: center;
+
+    color: var(--info-color) !important;
     font-size: 2.5vw !important;
   }
 
@@ -160,13 +178,17 @@ html {
     position: absolute;
     
     height: 100%;
-    width: 50%;
+    width: 55%;
     top: 0;
+    right: 0;
     text-align: center;
+
+    margin-right: 2.5%;
 
     font-family: 'Open Sans', sans-serif;
     font-size: 2vw;
 
+    color: var(--base-color)
   }
 
   docs img {
@@ -177,7 +199,7 @@ html {
   docs .line {
     display: inline-block;
     width: 100%;
-    border-top: 0.2px solid black;
+    border-top: 0.2px solid var(--base-color);
   }
 
   docs *:not(li, ol) {
@@ -194,6 +216,11 @@ html {
     white-space: pre;
   }
 
+  docs pre::before {
+    content:"\a";
+    white-space: pre;
+  }
+
   docs li, docs ol {
     text-align: left;
   }
@@ -205,7 +232,9 @@ html {
 
   dinfo {
     font-style: italic;
-    margin: 20px;
+    margin: 0;
+    text-align: center;
+
     font-size: 1.5vw;
 
     padding: 5px;
@@ -277,22 +306,50 @@ html {
 .docslink {
   position: fixed;
   top: 0;
-  right: 0;
+  left: 0;
   height: 100%;
-  width: 30%;
+  width: 40%;
+  margin: 0;
+  margin-right: 5%;
   list-style-type: none;
-  text-align: right;
+  text-align: left;
   
-  overflow-y: scroll;
+  overflow-y: hidden;
+  background-color: var(--bookmark-background);
 }
 
-.docslink a {
-  margin-right: 5%;
+.docslink ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  list-style-type: none;
+  text-align: left;
+  margin: 0;
+}
+
+.docslink ul a {
+  font-family: 'Open Sans', sans-serif;
+  margin-right: 20%;
   color: var(--bookmark-unselected);
   text-decoration: none;
+  z-index: 4;
 }
 
-.docslink a.dselected {
+.docslink button{
+  position: absolute;
+  border: none;
+  background: transparent;
+  font-size: 5vw;
+  color: var(--base-color);
+  z-index: 5;
+  bottom: 0;
+}
+
+
+
+.docslink ul a.dselected {
   color: var(--bookmark-selected);
 }
 
