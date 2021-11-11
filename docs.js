@@ -5,8 +5,6 @@ window.onerror = (errormsg, loc, line) => {
   alert(errormsg + " at line: " + line);
 }
 window.onload = () => {
-
-
   const dheads = document.querySelectorAll("dhead");
   const dcode = document.querySelectorAll("dcode");
   const div = document.createElement("div");
@@ -49,7 +47,7 @@ window.onload = () => {
       root.style.setProperty("--copy-button-color",  "rgb(255, 255, 255)");
       root.style.setProperty("--copy-button-bg",  "#111a42");
 
-      document.getElementById("dark").removeAttribute("disabled");
+      document.getElementById("DDarkTheme").removeAttribute("disabled");
     }
     else {
       button.innerHTML = "&#9790";
@@ -71,7 +69,7 @@ window.onload = () => {
       root.style.setProperty("--copy-button-color",  "white");
       root.style.setProperty("--copy-button-bg",  "#3aa0ff");
 
-      document.getElementById("dark").setAttribute("disabled", "disabled");
+      document.getElementById("DDarkTheme").setAttribute("disabled", "disabled");
     }
   })
 
@@ -99,7 +97,6 @@ window.onload = () => {
 
     heads[a.innerText] = [a, item.innerText];
   });
-
 
   document.body.appendChild(div);
 
