@@ -8,12 +8,12 @@ const docsScript = document.createElement("script");
 const docsCss = document.createElement("link");
 
 highlightScript.src = "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/highlight.min.js";
-docsScript.src = "https://cdn.jsdelivr.net/gh/BobTheBirdCodar/ddocs@latest/docs.js";
+docsScript.src = "https://cdn.jsdelivr.net/gh/BobTheBirdCodar/ddocs@v1.3.2.1/docs.js";
 
 hightlightCss.rel = "stylesheet";
 hightlightCss.href = "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.3.1/build/styles/default.min.css";
 docsCss.rel = "stylesheet";
-docsCss.href = "https://cdn.jsdelivr.net/gh/BobTheBirdCodar/ddocs@latest/docs.css";
+docsCss.href = "https://cdn.jsdelivr.net/gh/BobTheBirdCodar/ddocs@v1.3.2.1/docs.css";
 
 darkTheme.rel = "stylesheet";
 darkTheme.href = "https://highlightjs.org/static/demo/styles/atom-one-dark.css";
