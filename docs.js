@@ -1,9 +1,6 @@
 var heads = {};
 const root = document.documentElement;
 
-window.onerror = (errormsg, loc, line) => {
-  alert(errormsg + " at line: " + line);
-}
 window.onload = () => {
   const dheads = document.querySelectorAll("dhead");
   const dcode = document.querySelectorAll("dcode");
