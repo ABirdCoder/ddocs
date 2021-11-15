@@ -14,7 +14,7 @@ window.onload = () => {
   button.innerHTML = "&#9790";
   button.classList.add("light-mode")
   div.appendChild(button);
-  if(localStorage.get("darkmode")==="true") button.click();
+  if(localStorage.getItem("darkmode")==="true") button.click();
 
   button.addEventListener("click", () => {
     if (button.classList.contains("light-mode")) {
