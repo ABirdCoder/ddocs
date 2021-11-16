@@ -14,13 +14,16 @@ window.onload = () => {
   button.innerHTML = "&#9790";
   button.classList.add("light-mode")
   div.appendChild(button);
+  if(localStorage.getItem("darkmode")==="true") button.click();
 
   button.addEventListener("click", () => {
     if (button.classList.contains("light-mode")) {
       button.classList.remove("light-mode");
       button.classList.add("dark-mode");
+      localStorage.setItem("darkmode", "true");
     }
     else {
+      localStorage.setItem("darkmode", "false");
       button.classList.remove("dark-mode");
       button.classList.add("light-mode");
     }
