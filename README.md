@@ -1,6 +1,10 @@
 [![](https://data.jsdelivr.com/v1/package/gh/BobTheBirdCodar/ddocs/badge)](https://www.jsdelivr.com/package/gh/BobTheBirdCodar/ddocs)
 
 
+# DDOCS IS ARCHIVED!
+
+A better version is being worked on: )
+
 # DDOCS
 
 The quickest way to create docs for you projects.
